@@ -1,0 +1,682 @@
+    .bg11 {
+        align-items: flex-start;
+
+        background: 
+            url("pagetop.png"),
+            linear-gradient(
+            to bottom, 
+            #C8A97E 0%,   
+            #8E6F4E 40%, 
+            #3B2A20 75%, 
+            #19120F 100%
+        );
+
+        background-position: top center, center;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 200% 180px, cover; 
+        /* originally 260px but too big */
+        }
+
+        .gallery1 {
+            position: absolute;
+            left: 50%;
+            top: 40%;
+            transform: translateX(-50%);
+
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+
+            padding: 30px 40px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(14px);
+            border-radius: 50px;
+
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.45),
+                inset 0 0 20px rgba(255, 215, 160, 0.07);
+        }
+
+            .gallery1 img {
+                width: 220px;         
+                height: 300px;     
+                object-fit: cover;   
+
+                border-radius: 12px;
+                border: 1px solid rgba(255, 220, 150, 0.25);
+
+                box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+
+                transition: transform 0.35s ease, box-shadow 0.35s ease;
+            }
+
+                .gallery1 img:hover {
+                    transform: translateY(-8px) scale(1.03);
+                    box-shadow: 
+                        0 18px 45px rgba(0,0,0,0.55),
+                        0 0 25px rgba(255, 215, 160, 0.3);
+                }
+
+                    .gallery1 img:nth-child(2) {width: 260px;}
+                    .gallery1 img:nth-child(1),
+                    .gallery1 img:nth-child(3) {width: 230px;}
+
+    .bg12 {
+        background: #19120F;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        }
+
+    .bg13 {
+        background: linear-gradient(
+            to top, 
+            #19120F 100%
+            );   
+        }
+
+    .bg14 {
+        background: linear-gradient(
+            to top,   
+            #8E6F4E 20%, 
+            #3B2A20 75%, 
+            #19120F 100%
+        )
+     }
+
+    .bg15 {
+    background: linear-gradient(
+           to bottom,   
+            #8E6F4E 10%, 
+            #3B2A20 75%, 
+            #19120F 100%
+        )
+    }
+
+    .bg16 {
+    background:
+        linear-gradient(
+            to bottom, 
+            #19120F 10%,
+            rgba(20, 11, 10, 0.5) 100%
+        ),
+        url("gajahmadamalam.jpg");
+            background-size: cover, cover;
+            background-position: center bottom, center bottom;
+            background-repeat: no-repeat, no-repeat;
+        }
+/* backgroud images ini ignore ajalah  */
+
+
+
+/* buat font ignore aja */
+    @font-face {
+        font-family:"Catilde";
+        src: url("catilde/Catilde-Regular.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family:"Jane_Austen";
+        src: url("jane_austen/JaneAust.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+    body {
+        margin: 0;
+        font-family: Arial;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+
+        body::-webkit-scrollbar {
+            display: none; 
+        }
+
+.page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  scroll-snap-align: start;
+  
+  transition: background 0.6s ease;
+}
+
+.page .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+    .bg11 .titletext1 {
+        position: absolute;
+        top: 25%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        font-size: 1.2rem; 
+        }
+
+        .titletext1 h1 {
+            font-family: "Jane_Austen";
+            margin: 0;
+        }
+
+        .titletext1 p {
+            font-family: "Catilde";
+            margin-top: 4px;
+        }
+
+            .textstars {
+                position: absolute;
+                bottom: 5%;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+                .titletext1, .textstars {
+                    color: antiquewhite;
+                }
+/* ----------------------------------- page 12 -------------------- */
+#page12 {
+    height: 100vh !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0.6rem !important;
+    padding: 2rem !important;
+    box-sizing: border-box !important;
+}
+
+.bg12 {
+    background: #19120F;
+}
+
+.page12-title {
+    text-align: center;
+    width: 100%;
+}
+
+    .page12-title h1 {
+        font-family: "Catilde";
+        font-size: 2.8rem;
+        color: antiquewhite;
+        margin: 0 0 0.3rem 0;
+    }
+
+    .page12-subtitle {
+        font-family: "Jane_Austen";
+        font-size: 1.6rem;
+        color: rgba(255, 235, 205, 0.6);
+        margin: 0;
+        text-align: center;
+    }
+
+    .package-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1rem;
+        width: 100%;
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .package-card {
+        background: rgba(255, 248, 230, 0.08);
+        border: 1px solid rgba(255, 248, 230, 0.2);
+        border-radius: 12px;
+        padding: 1.4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        backdrop-filter: blur(6px);
+        text-align: left;
+    }
+
+    .package-label {
+        font-size: 0.85rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(255, 235, 205, 0.6);
+    }
+
+        .package-card h2 {
+            font-family: "Catilde";
+            font-size: 1.5rem;
+            color: antiquewhite;
+            margin: 0;
+        }
+
+.package-desc {
+    font-size: 1rem;
+    color: rgba(255, 235, 205, 0.8);
+    line-height: 1.5;
+    flex: 1;
+}
+
+.package-price {
+    border-top: 1px solid rgba(255, 248, 230, 0.15);
+    padding-top: 0.6rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+}
+
+.price-range {
+    font-family: "Catilde";
+    font-size: 1rem;
+    color: antiquewhite;
+}
+
+.price-unit {
+    font-size: 0.8rem;
+    color: rgba(255, 235, 205, 0.5);
+}
+
+.page12-footer {
+    font-size: 2.5rem;
+    color: antiquewhite;
+    text-align: center;
+    margin-top: auto;
+}
+
+#page12 .description2 p {
+    white-space: normal;
+    text-align: center;
+    font-size: 1.5rem;
+    color: rgba(255, 235, 205, 0.6);
+    margin: 0;
+
+    font-family: "Catilde";
+}
+/* ------------------------- page 13 -------------------- */
+    .bg13 .description2 {
+        position: absolute;
+        bottom: 2.5%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        font-size: 1.2rem; 
+
+        font-family: "Catilde";
+    }
+
+/* ----------------------- page 14 ------------------ */
+
+    .bg14 .titletext3 {
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+            white-space: nowrap;
+            overflow-x: auto;
+
+        font-size: 1.2rem; 
+    }
+
+        .bg14 h1 {
+            margin: 0;
+            font-family: "Catilde";
+        }
+
+            .bg14 p {
+                margin-top: 4px;
+                font-family: "Jane_Austen";
+
+                font-size: 2rem;
+            }
+
+                .bg14 h1, p {
+                    color: antiquewhite;
+                }
+
+                    .textstars3 h1 {
+                        position: absolute;
+                        bottom: 5%;
+                        left: 50%;
+                        transform: translateX(-50%);
+
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;   
+                        
+                        font-size: 3rem;
+                    }
+
+                    .bg14 .family3 {
+                    padding: 14px;
+                    background: linear-gradient(145deg, #d6c3a3, #b89b6d, #8c6f47);
+                    border-radius: 6px;
+                    box-shadow:
+                        0 10px 25px rgba(0,0,0,0.4),
+                        inset 0 0 8px rgba(255,255,255,0.2),
+                        inset 0 0 12px rgba(0,0,0,0.25);
+                    flex-shrink: 0;
+                    }
+
+                .family3 img {
+                    display: block;
+                    width: 420px;
+                    height: 280px;
+                    object-fit: cover;
+
+                    border-radius: 3px;
+
+                    filter: contrast(1.05) brightness(0.95) saturate(0.9);
+
+                    box-shadow:
+                        0 6px 15px rgba(0,0,0,0.35);
+
+                    filter: sepia(0.15) contrast(1.05) brightness(0.95);
+                }
+
+    .bg14 .titletext3 {
+        position: absolute;
+        top: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+            white-space: nowrap;
+            overflow-x: auto;
+
+        font-size: 1.2rem; 
+    }
+
+        .bg14 h1 {
+            margin: 0;
+            font-family: "Catilde";
+        }
+
+            .bg14 p {
+                margin-top: 4px;
+                font-family: "Jane_Austen";
+
+                font-size: 2rem;
+            }
+
+                .bg14 h1, p {
+                    color: antiquewhite;
+                }
+
+                    .textstars3 h1 {
+                        position: absolute;
+                        bottom: 5%;
+                        left: 50%;
+                        transform: translateX(-50%);
+
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;   
+                        
+                        font-size: 3rem;
+                    }
+
+                    .bg14 .family3 {
+                    padding: 14px;
+                    background: linear-gradient(145deg, #d6c3a3, #b89b6d, #8c6f47);
+                    border-radius: 6px;
+                    box-shadow:
+                        0 10px 25px rgba(0,0,0,0.4),
+                        inset 0 0 8px rgba(255,255,255,0.2),
+                        inset 0 0 12px rgba(0,0,0,0.25);
+                    flex-shrink: 0;
+                    }
+
+                .family3 img {
+                    display: block;
+                    width: 420px;
+                    height: 280px;
+                    object-fit: cover;
+
+                    border-radius: 3px;
+
+                    filter: contrast(1.05) brightness(0.95) saturate(0.9);
+
+                    box-shadow:
+                        0 6px 15px rgba(0,0,0,0.35);
+
+                    filter: sepia(0.15) contrast(1.05) brightness(0.95);
+                }
+
+.history-layout {
+    position: static;
+    transform: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.history-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    width: 280px;
+    border-left: 1px solid rgba(255, 220, 150, 0.2);
+    padding-left: 1.5rem;
+}
+
+.timeline-divider {
+    color: rgba(255, 220, 150, 0.3);
+    font-size: 0.8rem;
+    text-align: left;
+    margin: 0.2rem 0;
+}
+
+.history-year {
+    display: block;
+    font-family: "Catilde" !important;
+    font-size: 1.1rem !important;
+    color: #C8A96A;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.2rem;
+    position: relative;
+}
+
+.history-year::before {
+    content: '';
+    position: absolute;
+    left: -1.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: #C8A96A;
+    border-radius: 50%;
+}
+
+.history-text {
+    font-family: "Catilde" !important;
+    font-size: 0.85rem !important;
+    line-height: 1.6;
+    color: rgba(255, 235, 205, 0.7);
+    margin: 0;
+    text-align: left;
+}
+
+/* ------------------- page 15 ---------------- */
+            
+
+    .bg15 .titletext5 {
+        position: absolute;
+        top: 2.5%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+            white-space: nowrap;
+            overflow-x: auto;      
+
+        font-family: "Catilde";
+        color: antiquewhite;
+
+        font-size: 1.5rem;
+    }
+
+        .textstars4 h1 {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        
+        color: antiquewhite;
+    }
+
+/* ---------------------- page 16 ------------------------ */
+#page16 {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100vh !important;
+    overflow: hidden !important;
+    gap: 1.5rem !important;
+    padding: 2rem !important;
+    box-sizing: border-box !important;
+}
+
+.review-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+}
+
+.review-card {
+    width: 280px;
+    background: rgba(255, 248, 230, 0.06);
+    border: 1px solid rgba(255, 220, 150, 0.2);
+    border-radius: 16px;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-6px);
+}
+
+.review-card img {
+    width: 100%;
+    display: block;
+}
+
+.bg15 .titletext5 {
+    position: static !important;
+    transform: none !important;
+    text-align: center;
+}
+
+.textstars4 h1 {
+    position: static !important;
+    transform: none !important;
+    text-align: center;
+    font-size: 3rem;
+    color: antiquewhite;
+}
+
+/* ---------------------- page 16 ---------------------- */
+
+    .bg16 .titletext6 {
+        position: absolute;
+        top: 2.5%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        font-size: 1.5rem;    
+    }
+
+        .titletext6 h1 {
+            font-family: "Catilde";
+        }
+
+        .titletext6 p{
+            font-family: "Jane_Austen";
+            font-size: 1.5rem;
+            margin-top: 1px;
+        }
+
+            .bg16 h1, p {
+                color: antiquewhite;
+            }
+
+                .description6 p {
+                    position: absolute;
+                    bottom: 10%;
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center; 
+                    
+                    color: antiquewhite;
+
+                    white-space: nowrap; 
+                    overflow-x: auto;
+
+                    font-family: "Catilde";
+
+                    font-size: 1.2rem;
+                }
+
+                .bg16 .textstars6 h1 {
+                    position: absolute;
+                    bottom: 2.5%;
+                    left: 50%;
+                    transform: translateX(-50%);
+
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center; 
+                    
+                    color: antiquewhite;
+                } 
+        
