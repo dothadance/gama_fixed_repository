@@ -52,6 +52,7 @@
                 rgba(20, 11, 10, 0.2) 
             ),
             url("ruangdalamgajahmada.jpg");
+<<<<<<< HEAD
         background-size: cover;
         background-position: center bottom;
         background-repeat: no-repeat;
@@ -60,14 +61,28 @@
         min-height: 125vh;
         overflow: visible;
         scroll-snap-align: none; /* Mematikan lock scroll snap khusus page ini agar bisa di-scroll sampai bawah */
+=======
+        background-size: 100% 200vh;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+
+        height: 100vh;
+        overflow: hidden;
+>>>>>>> 067b51912bd80f6481e3c03479090de80f717ce6
         box-sizing: border-box;
 
         display: flex;
         flex-direction: column;
         align-items: center;
+<<<<<<< HEAD
         justify-content: flex-start; /* Menyusun konten dari atas secara berurutan */
         gap: 25px; /* Memberikan jarak antar form agar tidak menempel */
         padding: 100px 20px 80px; /* Menambah ruang atas untuk navbar dan bawah untuk footer */
+=======
+        justify-content: center;
+        gap: 0;
+        padding: 14px 20px 10px;
+>>>>>>> 067b51912bd80f6481e3c03479090de80f717ce6
         text-align: center;
         position: relative;
     }
@@ -463,6 +478,7 @@
                 0 0 25px rgba(255, 215, 160, 0.3);
         }
 
+<<<<<<< HEAD
     .gallery4-item:nth-child(2) img { width: 260px; }
     .gallery4-item:nth-child(1) img,
     .gallery4-item:nth-child(3) img { width: 230px; }
@@ -483,6 +499,28 @@
         text-align: center;
         width: 100%;
     }
+=======
+        .gallery4-item:nth-child(2) img { width: 260px; }
+        .gallery4-item:nth-child(1) img,
+        .gallery4-item:nth-child(3) img { width: 230px; }
+
+        .gallery4-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+            margin: 0;
+        }
+
+        .gallery4-item figcaption {
+            font-family: "Catilde";
+            font-size: 1rem;
+            color: rgba(255, 235, 205, 0.8);
+            letter-spacing: 0.08em;
+            text-align: center;
+            width: 100%;
+        }
+>>>>>>> 067b51912bd80f6481e3c03479090de80f717ce6
 
 /* RESERVATION FORM */
 .reservation-form-wrapper {
@@ -657,6 +695,7 @@
     .res-form { padding: 14px 16px 10px; }
     .page7-center h1 { font-size: 1.6rem; }
 }
+<<<<<<< HEAD
 
 /* style halaman login admin */
 .login-section {
@@ -740,3 +779,5 @@
 .btn-login:active {
     transform: translateY(0);
 }
+=======
+>>>>>>> 067b51912bd80f6481e3c03479090de80f717ce6
