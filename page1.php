@@ -2,7 +2,7 @@
 <html lang="eng">
 <head> 
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="page1style.css">
+  <link rel="stylesheet" href="css/page1style.css">
 </head>
 
 <body>
@@ -142,7 +142,7 @@
 
     <div class="buttontopage2">
       <div class="button1" onclick="window.open('https://wa.me/628115631222', '_blank')">Want to Reserve?</div>
-      <div class="button2" onclick="window.location.href='page2.html'">➜</div>
+      <div class="button2" onclick="window.location.href='page2.php'">➜</div>
     </div>
 
     <div class="name">
@@ -182,10 +182,10 @@
     if (notes) msg += `📝 Notes: ${notes}\n`;
     msg += `\nLooking forward to hearing from you!`;
 
-    window.open(`https://wa.me/628115631222?text=${encodeURIComponent(msg)}`, '_blank');
+    window.open(`https://wa.me/6281349717582?text=${encodeURIComponent(msg)}`, '_blank');
   }
   </script>
 
-  <script src="page1js.js"></script>
+  <script src="js/page1js.js"></script>
 </body>
 </html>
