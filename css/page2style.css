@@ -2,7 +2,7 @@
         align-items: flex-start;
 
         background: 
-            url("pagetop.png"),
+            url("../image/pagetop.png"),
             linear-gradient(
             to bottom, 
             #C8A97E 0%,   
@@ -102,7 +102,7 @@
             #19120F 10%,
             rgba(20, 11, 10, 0.5) 100%
         ),
-        url("gajahmadamalam.jpg");
+        url("../image/gajahmadamalam.jpg");
             background-size: cover, cover;
             background-position: center bottom, center bottom;
             background-repeat: no-repeat, no-repeat;
@@ -114,14 +114,14 @@
 /* buat font ignore aja */
     @font-face {
         font-family:"Catilde";
-        src: url("catilde/Catilde-Regular.ttf") format("truetype");
+        src: url("../fonts/catilde/Catilde-Regular.ttf") format("truetype");
         font-weight: normal;
         font-style: normal;
     }
 
     @font-face {
         font-family:"Jane_Austen";
-        src: url("jane_austen/JaneAust.ttf") format("truetype");
+        src: url("../fonts/jane_austen/JaneAust.ttf") format("truetype");
         font-weight: normal;
         font-style: normal;
     }
