@@ -2,7 +2,7 @@
     <html lang="eng">
     <head> 
         <meta charset="UTF-8">
-        <link rel="stylesheet" href="page2style.css">
+        <link rel="stylesheet" href="css/page2style.css">
     </head>
 
 <body>
@@ -17,9 +17,9 @@
         <h1>✦✦✦</h1>
       </div>
           <section id="page11gallery" class="gallery1">`
-            <img src="decor1.jpg">
-            <img src="decor2.jpg">
-            <img src="decor3.jpg">
+            <img src="image/decor1.jpg">
+            <img src="image/decor2.jpg">
+            <img src="image/decor3.jpg">
           </section>
       </section>
 
@@ -81,7 +81,7 @@
 
 <div class="history-layout">
   <div class="family3">
-    <img src="wholefamily.jpg">
+    <img src="image/wholefamily.jpg">
   </div>
 
   <div class="history-timeline">
@@ -119,13 +119,13 @@
 
       <div class="review-container">
       <div class="review-card">
-        <img src="review1.jpg" alt="Review 1">
+        <img src="image/review1.jpg" alt="Review 1">
       </div>
       <div class="review-card">
-        <img src="review2.jpg" alt="Review 2">
+        <img src="image/review2.jpg" alt="Review 2">
       </div>
       <div class="review-card">
-        <img src="review3.jpg" alt="Review 3">
+        <img src="image/review3.jpg" alt="Review 3">
       </div>
     </div>
 
