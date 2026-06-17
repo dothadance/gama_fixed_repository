@@ -20,26 +20,26 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 <section class="dashboard-section">
     <div class="dashboard-container">
         <div class="dashboard-header">
-            <h1>Selamat Datang di Panel Admin</h1>
-            <p>Halo, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong>! Anda masuk sebagai Administrator Gajah Mada Restaurant.</p>
+            <h1>Welcome to the Admin Dashboard</h1>
+            <p>Hello, <strong><?php echo htmlspecialchars($_SESSION['username']); ?></strong>! You are logged in as the Gajah Mada Restaurant Administrator.</p>
         </div>
 
         <div class="admin-grid">
             <div class="admin-card">
-                <h3>Manajemen Menu / Courses</h3>
-                <p>Tambah, ubah, atau hapus daftar menu makanan dan minuman restoran.</p>
-                <a href="courses/index.php" class="admin-btn">Kelola Menu</a>
+                <h3>Event Package Management</h3>
+                <p>Manage event package bookings, including event details, customer information, event dates, and reservation status.</p>
+                <a href="event_package/index.php" class="admin-btn">Review Event</a>
             </div>
 
             <div class="admin-card">
-                <h3>Daftar Registrasi / Reservasi</h3>
-                <p>Lihat dan konfirmasi data reservasi tempat dari pelanggan.</p>
-                <a href="registrations/index.php" class="admin-btn">Kelola Registrasi</a>
+                <h3>Customer Reservations</h3>
+                <p>Review and confirm reservation requests submitted by customers.</p>
+                <a href="registrations/index.php" class="admin-btn">Review Reservations</a>
             </div>
         </div>
 
         <div class="logout-wrapper">
-            <a href="logout.php" class="btn-logout-admin">Keluar dari Sistem (Logout)</a>
+            <a href="logout.php" class="btn-logout-admin">End the current session (Logout)</a>
         </div>
     </div>
 </section>
