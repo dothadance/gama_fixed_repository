@@ -2,7 +2,7 @@
     .bg1 {
         align-items: flex-start;
         background: 
-            url("pagetop.png"),
+            url("../image/pagetop.png"),
             linear-gradient(
             to bottom, 
             #C8A97E 0%,   
@@ -22,7 +22,7 @@
             rgba(59, 42, 32, 0.8),
             rgba(25, 18, 15, 1)
         ), 
-        url("notblurry.webp"); 
+        url("../image/notblurry.webp"); 
         background-size: cover, cover; 
         background-position: center center, center 40px;
         display: flex;
@@ -38,7 +38,7 @@
                 rgb(25, 18, 15, 1) 10%,
                 rgba(20, 11, 10, 0.2)
             ),
-            url("ruangdalamgajahmada.jpg");
+            url("../image/ruangdalamgajahmada.jpg");
         background-size: 100% 200vh;
         background-position: center top;
         background-repeat: no-repeat;
@@ -51,8 +51,8 @@
                 rgb(25, 18, 15, 1) 10%,
                 rgba(20, 11, 10, 0.2) 
             ),
-            url("ruangdalamgajahmada.jpg");
-<<<<<<< HEAD
+            url("../image/ruangdalamgajahmada.jpg");
+
         background-size: cover;
         background-position: center bottom;
         background-repeat: no-repeat;
@@ -61,28 +61,25 @@
         min-height: 125vh;
         overflow: visible;
         scroll-snap-align: none; /* Mematikan lock scroll snap khusus page ini agar bisa di-scroll sampai bawah */
-=======
+
         background-size: 100% 200vh;
         background-position: center bottom;
         background-repeat: no-repeat;
 
         height: 100vh;
         overflow: hidden;
->>>>>>> 067b51912bd80f6481e3c03479090de80f717ce6
         box-sizing: border-box;
 
         display: flex;
         flex-direction: column;
         align-items: center;
-<<<<<<< HEAD
         justify-content: flex-start; /* Menyusun konten dari atas secara berurutan */
         gap: 25px; /* Memberikan jarak antar form agar tidak menempel */
         padding: 100px 20px 80px; /* Menambah ruang atas untuk navbar dan bawah untuk footer */
-=======
+
         justify-content: center;
         gap: 0;
         padding: 14px 20px 10px;
->>>>>>> 067b51912bd80f6481e3c03479090de80f717ce6
         text-align: center;
         position: relative;
     }
@@ -145,7 +142,7 @@
 #loader {
   position: fixed;
   inset: 0;
-  background: #19120F 100%;
+  background: #19120F;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -211,14 +208,14 @@
 /* fonts */
     @font-face {
         font-family:"Catilde";
-        src: url("catilde/Catilde-Regular.ttf") format("truetype");
+        src: url("../fonts/catilde/Catilde-Regular.ttf") format("truetype");
         font-weight: normal;
         font-style: normal;
     }
 
     @font-face {
         font-family:"Jane_Austen";
-        src: url("jane_austen/JaneAust.ttf") format("truetype");
+        src: url("../fonts/jane_austen/JaneAust.ttf") format("truetype");
         font-weight: normal;
         font-style: normal;
     }
@@ -478,7 +475,6 @@
                 0 0 25px rgba(255, 215, 160, 0.3);
         }
 
-<<<<<<< HEAD
     .gallery4-item:nth-child(2) img { width: 260px; }
     .gallery4-item:nth-child(1) img,
     .gallery4-item:nth-child(3) img { width: 230px; }
@@ -499,7 +495,6 @@
         text-align: center;
         width: 100%;
     }
-=======
         .gallery4-item:nth-child(2) img { width: 260px; }
         .gallery4-item:nth-child(1) img,
         .gallery4-item:nth-child(3) img { width: 230px; }
@@ -520,7 +515,6 @@
             text-align: center;
             width: 100%;
         }
->>>>>>> 067b51912bd80f6481e3c03479090de80f717ce6
 
 /* RESERVATION FORM */
 .reservation-form-wrapper {
@@ -695,7 +689,6 @@
     .res-form { padding: 14px 16px 10px; }
     .page7-center h1 { font-size: 1.6rem; }
 }
-<<<<<<< HEAD
 
 /* style halaman login admin */
 .login-section {
@@ -779,5 +772,3 @@
 .btn-login:active {
     transform: translateY(0);
 }
-=======
->>>>>>> 067b51912bd80f6481e3c03479090de80f717ce6
