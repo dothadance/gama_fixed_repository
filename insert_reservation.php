@@ -16,13 +16,14 @@ function generateReservationCode($conn) {
     return $code;
 }
 
-$name = $_POST['name'];
-$phone = $_POST['phone_number'];
-$date = $_POST['date'];
-$time = $_POST['time'];
-$guests = $_POST['number_of_guests'];
-$occasion = $_POST['occasion'];
-$notes = $_POST['notes'];
+/* biar gak error pas pakai tanda apostrophee (') */
+$name = mysqli_real_escape_string($conn, $_POST['name']);
+$phone = mysqli_real_escape_string($conn, $_POST['phone_number']);
+$date = mysqli_real_escape_string($conn, $_POST['date']);
+$time = mysqli_real_escape_string($conn, $_POST['time']);
+$guests = mysqli_real_escape_string($conn, $_POST['number_of_guests']);
+$occasion = mysqli_real_escape_string($conn, $_POST['occasion']);
+$notes = mysqli_real_escape_string($conn, $_POST['notes']);
 
 $reservation_code = generateReservationCode($conn);
 $status = 'Pending';
@@ -33,8 +34,11 @@ $sql = "INSERT INTO reservation
         (NULL, '$reservation_code', '$name', '$phone', '$date', '$time', '$guests', '$occasion', '$notes', '$status')";
 
 if (mysqli_query($conn, $sql)) {
+
     header("Location: index1.php?status=success&code=" . urlencode($reservation_code));
     exit;
+
 } else {
     echo "Error: " . mysqli_error($conn);
 }
+?>
