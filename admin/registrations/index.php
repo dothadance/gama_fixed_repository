@@ -21,6 +21,7 @@ include "../../koneksi.php";
         <thead>
             <tr>
                 <th>ID</th>
+                <th>Reservation Code</th>
                 <th>Customer Name</th>
                 <th>Phone Number</th>
                 <th>Date</th>
@@ -28,6 +29,8 @@ include "../../koneksi.php";
                 <th>Number of Guests</th>
                 <th>Occasion</th>
                 <th>Notes</th>
+                <th>Current Status</th>
+                <th>Change Status</th>
             </tr>
         </thead>
         <tbody>
@@ -37,19 +40,34 @@ include "../../koneksi.php";
 
             if ($result && mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
-                    echo "<tr>";
-                    echo "<td>" . $row['reservation_id'] . "</td>";
-                    echo "<td>" . htmlspecialchars($row['name']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['phone_number']) . "</td>";
-                    echo "<td>" . $row['date'] . "</td>";
-                    echo "<td>" . $row['time'] . "</td>";
-                    echo "<td>" . $row['number_of_guests'] . " Guests</td>";
-                    echo "<td>" . htmlspecialchars($row['occasion']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['notes']) . "</td>";
-                    echo "</tr>";
+                    ?>
+                    <tr>
+                        <td><?= $row['reservation_id']; ?></td>
+                        <td><?= htmlspecialchars($row['reservation_code']); ?></td>
+                        <td><?= htmlspecialchars($row['name']); ?></td>
+                        <td><?= htmlspecialchars($row['phone_number']); ?></td>
+                        <td><?= htmlspecialchars($row['date']); ?></td>
+                        <td><?= htmlspecialchars($row['time']); ?></td>
+                        <td><?= htmlspecialchars($row['number_of_guests']); ?> Guests</td>
+                        <td><?= htmlspecialchars($row['occasion']); ?></td>
+                        <td><?= htmlspecialchars($row['notes']); ?></td>
+                        <td><?= htmlspecialchars($row['status']); ?></td>
+                        <td>
+                            <form action="update_reservation_status.php" method="POST">
+                                <input type="hidden" name="reservation_id" value="<?= $row['reservation_id']; ?>">
+                                <select name="status">
+                                    <option value="Pending" <?= ($row['status'] == 'Pending') ? 'selected' : ''; ?>>Pending</option>
+                                    <option value="Confirmed" <?= ($row['status'] == 'Confirmed') ? 'selected' : ''; ?>>Confirmed</option>
+                                    <option value="Cancelled" <?= ($row['status'] == 'Cancelled') ? 'selected' : ''; ?>>Cancelled</option>
+                                </select>
+                                <button type="submit">Update</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <?php
                 }
             } else {
-                echo "<tr><td colspan='8' class='no-data'>No reservation records found.</td></tr>";
+                echo "<tr><td colspan='11' class='no-data'>No reservation records found.</td></tr>";
             }
             ?>
         </tbody>
