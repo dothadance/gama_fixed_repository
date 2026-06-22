@@ -1,0 +1,886 @@
+/* background images */
+    .bg1 {
+        align-items: flex-start;
+        background: 
+            url("../image/pagetop.png"),
+            linear-gradient(
+            to bottom, 
+            #C8A97E 0%,   
+            #8E6F4E 40%, 
+            #3B2A20 75%, 
+            #19120F 100%
+        );
+        background-position: top center, center;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 200% 180px, cover; 
+    }
+
+    .bg2 {
+        background: linear-gradient(
+            to top, 
+            rgba(39, 33, 26, 1),
+            rgba(59, 42, 32, 0.8),
+            rgba(25, 18, 15, 1)
+        ), 
+        url("../image/notblurry.webp"); 
+        background-size: cover, cover; 
+        background-position: center center, center 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .bg3 {
+        background: 
+            linear-gradient(
+                to bottom, 
+                rgb(25, 18, 15, 1) 10%,
+                rgba(20, 11, 10, 0.2)
+            ),
+            url("../image/ruangdalamgajahmada.jpg");
+        background-size: 100% 200vh;
+        background-position: center top;
+        background-repeat: no-repeat;
+    }
+
+    .bg6 {
+        background:
+            linear-gradient(
+                to top,
+                rgb(25, 18, 15, 1) 10%,
+                rgba(20, 11, 10, 0.2) 
+            ),
+            url("../image/ruangdalamgajahmada.jpg");
+
+        background-size: cover;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+
+        /* PERBAIKAN: Mengubah height menjadi min-height dan overflow menjadi visible agar konten muat */
+        min-height: 125vh;
+        overflow: visible;
+        scroll-snap-align: none; /* Mematikan lock scroll snap khusus page ini agar bisa di-scroll sampai bawah */
+
+        background-size: 100% 200vh;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+
+        height: 100vh;
+        overflow: hidden;
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* Menyusun konten dari atas secara berurutan */
+        gap: 25px; /* Memberikan jarak antar form agar tidak menempel */
+        padding: 100px 20px 80px; /* Menambah ruang atas untuk navbar dan bawah untuk footer */
+
+        justify-content: center;
+        gap: 0;
+        padding: 14px 20px 10px;
+        text-align: center;
+        position: relative;
+    }
+
+    .buttontopage2 {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+        position: relative;
+        z-index: 3;
+    }
+
+        .button1, .button2 {
+            background-color: antiquewhite;
+            padding: 8px 20px;
+            border-radius: 999px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            color: #2b1d1a;
+        }
+
+        .button2 {
+            padding: 8px;
+            width: 38px;
+            height: 38px;
+        }
+
+        .button1:hover, .button2:hover {
+            transform: translateY(-2px);
+            transition: 0.2s ease;
+        }
+
+    .page7-center {
+        text-align: center;
+        flex-shrink: 0;
+        margin-bottom: 8px;
+    }
+
+    .page7-center h1 {
+        font-family: "Catilde";
+        font-size: 2.2rem;
+        color: antiquewhite;
+        margin: 0 0 2px 0;
+    }
+
+    .page7-center p {
+        font-family: "Jane_Austen";
+        font-size: 1.3rem;
+        color: rgba(255, 235, 205, 0.6);
+        margin: 0;
+    }
+
+
+/* loader */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #19120F;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  transition: opacity 1s ease, visibility 1s ease;
+}
+
+    .loader-content {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+        .loader-content h1 {
+            color: #C8A96A;
+            font-size: 4rem;
+            letter-spacing: 6px;
+            margin-bottom: 1px;
+            animation: fadeUp 1s ease;
+            font-family: "Catilde";
+        }
+
+        .loader-content p {
+            color: white;
+            letter-spacing: 8px;
+            margin-bottom: 40px;
+            opacity: 0.8;
+            animation: fadeUp 1.5s ease;
+            font-family: "Jane_Austen";
+            font-size: 2rem;
+            margin-top: 0;
+        }
+
+.loading-bar {
+  width: 250px;
+  height: 4px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 20px;
+  overflow: hidden;
+}
+    .loading-fill {
+        width: 0%;
+        height: 100%;
+        background: #C8A96A;
+        animation: loading 2.5s ease forwards;
+    }
+
+        #loader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        @keyframes loading {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+/* fonts */
+    @font-face {
+        font-family:"Catilde";
+        src: url("../fonts/catilde/Catilde-Regular.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family:"Jane_Austen";
+        src: url("../fonts/jane_austen/JaneAust.ttf") format("truetype");
+        font-weight: normal;
+        font-style: normal;
+    }
+
+/* global */
+    body {
+        margin: 0;
+        font-family: Arial;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+
+    body::-webkit-scrollbar {
+        display: none; 
+    }
+
+    html {
+        scroll-snap-type: y mandatory;
+        scroll-behavior: smooth;
+    }
+
+.page {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    scroll-snap-align: start;
+    transition: background 0.6s ease;
+}
+
+.page .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.text {
+    text-align: center;
+    color: white;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+    .text.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+        .text p {
+            font-size: 1.5rem;
+            margin: 10px 0 0;
+        }
+
+/* PAGE 1 */
+.bg1 .text {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    gap: 2px;
+    transform: translateY(60px);
+}
+
+    .bg1 .text h1 {
+        font-family: "Jane_Austen";
+        color: antiquewhite;
+        font-size: 4rem;
+        margin: 0;
+        order: 2;
+    }
+
+        .bg1 .text h2 {
+            font-family: "Catilde";
+            font-size: 4.5rem;
+            margin: 0;
+            order: 1;
+        }
+
+        .bg1 .text h2 span {
+            display: block;
+        }
+
+            .bg1 .text p {
+                font-family: "Jane_Austen";
+                color: antiquewhite; 
+                order: 3;
+                margin: 0;
+                font-size: 3rem;
+            }
+
+                .bg1 .text .stars {
+                    order: 4;
+                    margin: 0;
+                    font-size: 2.5rem;
+                }
+
+/* PAGE 2 */
+.bg2 .text {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    color: antiquewhite;
+}
+
+    .bg2 .text h1 {
+        font-family: "Jane_Austen";
+        font-size: 3rem;
+        margin-bottom: 8px;
+    }
+
+    .bg2 .text p {
+        font-family: "Catilde";
+        font-size: 2rem;
+        margin-bottom: 4px;
+    }
+
+        .menu_grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+.oval {
+    width: 120px;
+    height: 160px;
+    background: linear-gradient(
+        145deg,
+        rgba(255,255,255,0.12),
+        rgba(255,255,255,0.04)
+    );
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 40px;
+    color: antiquewhite;
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 15px;
+    font-family: "Catilde";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow:
+        0 8px 30px rgba(0,0,0,0.3),
+        inset 0 0 10px rgba(255,255,255,0.15);
+    transition: all 0.3s ease;
+}
+
+    .oval:hover {
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 
+            0 6px 25px rgba(0, 0, 0, 0.35),
+            inset 0 0 15px rgba(255, 255, 255, 0.25);
+    }
+
+.location-oval {
+    position: relative;
+}
+
+.location-preview {
+    display: none;
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 220, 150, 0.3);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    z-index: 999;
+    width: 220px;
+    height: 160px;
+    pointer-events: none;
+}
+
+    .location-oval:hover .location-preview {
+        display: block;
+        pointer-events: auto;
+    }
+
+/* PAGE 4 */
+#page4 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+    height: 100vh;  
+}
+
+.bg3 .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+    margin-top: 40px; 
+    font-size: 1.5rem;
+    color: antiquewhite;
+}
+
+    .bg3 .text h1 { 
+        font-family: "Catilde";
+    } 
+
+        .bg3 .text p {
+            font-family: "Jane_Austen";
+            font-size: 2rem;
+        }
+
+.stars4 {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: antiquewhite;
+}
+
+    .gallery4 {
+        position: absolute;
+        left: 50%;
+        top: 35%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+        padding: 30px 40px;
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(14px);
+        border-radius: 50px;
+        box-shadow: 
+            0 20px 40px rgba(0, 0, 0, 0.45),
+            inset 0 0 20px rgba(255, 215, 160, 0.07);
+    }
+
+    .gallery4 img {
+        width: 220px;         
+        height: 300px;     
+        object-fit: cover;   
+        border-radius: 12px;
+        border: 1px solid rgba(255, 220, 150, 0.25);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+        .gallery4 img:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 
+                0 18px 45px rgba(0,0,0,0.55),
+                0 0 25px rgba(255, 215, 160, 0.3);
+        }
+
+    .gallery4-item:nth-child(2) img { width: 260px; }
+    .gallery4-item:nth-child(1) img,
+    .gallery4-item:nth-child(3) img { width: 230px; }
+
+    .gallery4-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.6rem;
+        margin: 0;
+    }
+
+    .gallery4-item figcaption {
+        font-family: "Catilde";
+        font-size: 1rem;
+        color: rgba(255, 235, 205, 0.8);
+        letter-spacing: 0.08em;
+        text-align: center;
+        width: 100%;
+    }
+        .gallery4-item:nth-child(2) img { width: 260px; }
+        .gallery4-item:nth-child(1) img,
+        .gallery4-item:nth-child(3) img { width: 230px; }
+
+        .gallery4-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.6rem;
+            margin: 0;
+        }
+
+        .gallery4-item figcaption {
+            font-family: "Catilde";
+            font-size: 1rem;
+            color: rgba(255, 235, 205, 0.8);
+            letter-spacing: 0.08em;
+            text-align: center;
+            width: 100%;
+        }
+
+/* RESERVATION FORM */
+.reservation-form-wrapper {
+    width: 100%;
+    max-width: 560px;
+    flex-shrink: 1;
+    position: relative;
+    z-index: 2;
+}
+
+.reservation-form-wrapper h2,
+.reservation-form-wrapper .form-sub {
+    display: none;
+}
+
+.res-form {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(201, 169, 110, 0.25);
+    border-radius: 14px;
+    padding: 16px 24px 12px;
+    backdrop-filter: blur(10px);
+}
+
+.res-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.res-form .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 0;
+}
+
+.res-form label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c9a96e;
+    font-weight: 500;
+}
+
+.res-form input,
+.res-form select,
+.res-form textarea {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(201, 169, 110, 0.3);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: #f5e6c8;
+    font-size: 13px;
+    outline: none;
+    transition: border-color .2s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.res-form input:focus,
+.res-form select:focus,
+.res-form textarea:focus {
+    border-color: #c9a96e;
+    background: black;
+}
+
+.res-form select {
+    color-scheme: dark; 
+}
+
+.res-form select option {
+    color: #ffffff !important;        
+    background-color: #2b1d1a !important; 
+}
+
+.wa-btn {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(135deg, #c9a96e, #a07840);
+    border: none;
+    border-radius: 8px;
+    color: #1a0f07;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+    .wa-btn:hover {
+        opacity: 0.9;
+        transition: opacity 0.2s;
+    }
+
+.form-note {
+    font-size: 11px;
+    color: rgba(245, 230, 200, 0.4);
+    text-align: center;
+    margin-top: 6px;
+    line-height: 1.4;
+}
+
+/* BUTTONS BAWAH */
+.bg6 .buttontopage2 {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    flex-shrink: 0;
+}
+
+    .button1 {
+        background-color: rgba(255, 255, 255, 0.85);
+        border: 2px solid #ffffff;
+        border-radius: 30px;
+        font-family: "Catilde";
+        color: #333;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        height: 44px;
+        padding: 0 32px;
+        font-size: 1.5rem;
+        display: flex;
+        align-items: center;
+    }
+
+        .button1:hover {
+            background-color: transparent;
+            color: #fff;
+            border-color: #fff;
+            transform: translateY(-3px);
+        }
+
+    .button2 {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 2px solid #ffffff;
+        color: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.4rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+        .button2:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+
+/* FOOTER TEXT */
+.bg6 .name {
+    flex-shrink: 0;
+    margin-top: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+.bg6 .name p {
+    color: antiquewhite;
+    font-family: "Catilde";
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 500px) {
+    .res-form .form-row { grid-template-columns: 1fr; }
+    .res-form { padding: 14px 16px 10px; }
+    .page7-center h1 { font-size: 1.6rem; }
+}
+
+/* style halaman login admin */
+.login-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; 
+    background: #19120F; 
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.04); 
+    border: 1px solid rgba(201, 169, 110, 0.25); 
+    padding: 35px 30px;
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: antiquewhite;
+    font-family: "Catilde", sans-serif; 
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(201, 169, 110, 0.3);
+    border-radius: 8px;
+    color: #f5e6c8;
+    font-size: 14px;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #c9a96e;
+    background: rgba(201, 169, 110, 0.08);
+    box-shadow: 0 0 8px rgba(201, 169, 110, 0.2);
+}
+
+.input-group input::placeholder {
+    color: rgba(245, 230, 200, 0.4);
+}
+
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #c9a96e, #a07840); 
+    border: none;
+    border-radius: 8px;
+    color: #1a0f07; 
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn-login:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.btn-login:active {
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   MODAL POP-UP SUKSES RESERVASI (CUSTOM DESIGN)
+   ========================================================================== */
+.gama-modal-overlay {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    z-index: 99999;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.gama-modal-box {
+    background: #19120F; /* Warna gelap khas Gajah Mada */
+    border: 2px solid #c9a96e; /* Bingkai Emas */
+    border-radius: 16px;
+    padding: 30px 40px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    color: #f5e6c8;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7), 0 0 20px rgba(201, 169, 110, 0.2);
+    animation: scaleUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.gama-modal-icon { 
+    font-size: 3rem; 
+    margin-bottom: 10px; 
+}
+
+.gama-modal-box h2 { 
+    font-family: 'Catilde', serif; 
+    font-size: 2rem; 
+    color: #c9a96e; 
+    margin: 10px 0; 
+}
+
+.gama-modal-box p { 
+    font-family: Arial, sans-serif; 
+    font-size: 0.95rem; 
+    color: rgba(245, 230, 200, 0.8); 
+    margin-bottom: 20px; 
+}
+
+.gama-code-box {
+    background: rgba(201, 169, 110, 0.1);
+    border: 1px dashed #c9a96e;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex; 
+    flex-direction: column; 
+    gap: 5px;
+}
+
+.gama-code-title { 
+    font-size: 10px; 
+    letter-spacing: 2px; 
+    color: #c9a96e; 
+    text-transform: uppercase; 
+}
+
+.gama-code-value { 
+    font-size: 1.8rem; 
+    font-weight: bold; 
+    letter-spacing: 3px; 
+    color: #ffffff; 
+}
+
+.gama-modal-note { 
+    font-size: 0.8rem !important; 
+    color: #ffb74d !important; 
+    line-height: 1.4; 
+}
+
+.gama-modal-btn {
+    background: #c9a96e; 
+    color: #19120F;
+    border: none; 
+    padding: 12px 30px; 
+    font-weight: bold;
+    border-radius: 8px; 
+    cursor: pointer; 
+    font-size: 14px;
+    transition: all 0.2s; 
+    width: 100%; 
+    margin-top: 10px;
+}
+
+.gama-modal-btn:hover { 
+    background: #f5e6c8; 
+    transform: translateY(-2px); 
+}
+
+@keyframes fadeIn { 
+    from { opacity: 0; } 
+    to { opacity: 1; } 
+}
+@keyframes scaleUp { 
+    from { transform: scale(0.8); opacity: 0; } 
+    to { transform: scale(1); opacity: 1; } 
+}
