@@ -60,14 +60,11 @@
         </div>
         <a href="book_event.php?package=Package%20B" class="package-btn">Book Package B</a>
     </div>
-
 </div>
 
-  <div class="page12-footer">✦✦✦</div>
-
-    <p>ㆍ Available for all event types ── For further details regarding event packages, contact us or visit our store at Jl. Gajahmada, Pontianak.</p>
-  </div>
-
+        <div class="page12-footer">✦✦✦</div>
+        <p>ㆍ Available for all event types ── For further details regarding event packages, contact us or visit our store at Jl. Gajahmada, Pontianak.</p>
+        </div>
 </section>
 <!-- 
     <section id="page14" class="page parallax bg13">

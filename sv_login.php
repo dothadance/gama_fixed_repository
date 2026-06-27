@@ -1,19 +1,19 @@
 <?php
 session_start();
-include "koneksi.php";
+include "koneksi.php"; 
 
 $username = $_POST['username'];
-$password = md5($_POST['password']); 
+$password = $_POST['password'];
 
-$sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-$query = mysqli_query($conn, $sql); 
-$num = mysqli_num_rows($query);
+$query = "SELECT * FROM users WHERE username = ? AND password = ?";
+$stmt = mysqli_prepare($koneksi, $query);
+mysqli_stmt_bind_param($stmt, "ss", $username, $password);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
 
-if($num > 0){
+if (mysqli_num_rows($result) === 1) {
+    $_SESSION['logged_in'] = true;
     $_SESSION['username'] = $username;
-    $_SESSION['logged_in'] = true; 
-    
-    session_write_close();
     header("Location: admin/dashboard.php");
     exit;
 } else {

@@ -9,7 +9,6 @@ if (isset($_GET['status']) && $_GET['status'] == 'success' && isset($_GET['code'
 ?>
 
 <?php
-// Cek apakah ada kiriman status success dan kode dari file insert_reservation tadi
 if (isset($_GET['status']) && $_GET['status'] == 'success' && isset($_GET['code'])) {
     $kode_user = htmlspecialchars($_GET['code']);
     echo "<script>

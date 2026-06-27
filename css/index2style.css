@@ -527,10 +527,11 @@ body::-webkit-scrollbar {
    3. NEW STYLE: PREMIUM BUTTONS (page2.php)
    ========================================================================== */
 .package-btn {
-    display: inline-block;
+    display: block; 
     text-align: center;
     padding: 10px 20px;
-    margin-top: 15px;
+    margin: 15px auto 0 auto; 
+    width: max-content; 
     background: transparent;
     color: #c9a96e; 
     border: 1px solid rgba(201, 169, 110, 0.4); 
@@ -636,7 +637,6 @@ body::-webkit-scrollbar {
     opacity: 1;
 }
 
-/* Ikon kalender input date otomatis berwarna terang */
 .event-form-group input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(0.7) sepia(1) saturate(3) hue-rotate(5deg);
     cursor: pointer;
@@ -678,3 +678,4 @@ body::-webkit-scrollbar {
 .back-link:hover {
     color: #ff6b6b; 
 }
+

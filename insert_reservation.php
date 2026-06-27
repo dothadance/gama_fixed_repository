@@ -16,7 +16,6 @@ function generateReservationCode($conn) {
     return $code;
 }
 
-/* biar gak error pas pakai tanda apostrophee (') */
 $name = mysqli_real_escape_string($conn, $_POST['name']);
 $phone = mysqli_real_escape_string($conn, $_POST['phone_number']);
 $date = mysqli_real_escape_string($conn, $_POST['date']);
@@ -35,7 +34,7 @@ $sql = "INSERT INTO reservation
 
 if (mysqli_query($conn, $sql)) {
 
-    header("Location: index1.php?status=success&code=" . urlencode($reservation_code));
+    header("Location: index.php?status=success&code=" . urlencode($reservation_code));
     exit;
 
 } else {

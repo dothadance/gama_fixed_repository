@@ -1,9 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "gajahmada_restaurant");
-
-if (!$conn) {
-    die("Koneksi gagal: " . mysqli_connect_error());
-}
+include "../../koneksi.php";
 ?>
 
 <!DOCTYPE html>
@@ -11,83 +7,102 @@ if (!$conn) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Package Management Board</title>
+    <title>Event Package Management - Gajah Mada Restaurant</title>
     <link rel="stylesheet" href="../../css/adminstyle.css">
 </head>
 <body>
 
-<div class="management-container">
+<div class="container">
+
+    <a href="../dashboard.php" class="btn-back">&larr; Back to Dashboard</a>
+
     <h2>Event Package Management Board</h2>
-    <a href="../dashboard.php" class="btn-back">← Back to Dashboard</a>
 
-    <table class="event-table">
+    <table>
         <thead>
             <tr>
-                <th>EVENT TYPE</th>
-                <th>NAME</th>
-                <th>PHONE NUMBER</th>
-                <th>EVENT DATE</th>
-                <th>STATUS</th>
+                <th>Event Type</th>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Event Date</th>
+                <th>Status</th>
             </tr>
         </thead>
-        <tbody>
-            <?php
-            $query = "SELECT * FROM event_reservation ORDER BY event_date DESC";
-            $result = mysqli_query($conn, $query); 
 
-            if (mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
-                    ?>
-                    <tr>
-                        <td><?php echo htmlspecialchars($row['package_name']); ?></td>
-                        <td><?php echo htmlspecialchars($row['full_name']); ?></td>
-                        <td><?php echo htmlspecialchars($row['phone_number']); ?></td>
-                        <td><?php echo htmlspecialchars($row['event_date']); ?></td>
-                        <td>
-                            <span class="status-badge <?php echo strtolower($row['status']); ?>">
-                                <?php echo htmlspecialchars($row['status']); ?>
-                            </span>
-                        </td>
-                    </tr>
-                    <?php
-                }
-            } else {
-                echo "<tr><td colspan='5' style='text-align:center;'>Belum ada data reservasi.</td></tr>";
+        <tbody>
+
+        <?php
+
+        $sql = "SELECT * FROM reservation ORDER BY reservation_id DESC";
+        $result = mysqli_query($conn, $sql);
+
+        if ($result && mysqli_num_rows($result) > 0) {
+
+            while($row = mysqli_fetch_assoc($result)) {
+
+                echo "<tr>";
+                echo "<td>" . htmlspecialchars($row['occasion']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['name']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['phone_number']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['date']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['time']) . "</td>";
+                echo "<td>" . htmlspecialchars($row['number_of_guests']) . " Guests</td>";
+                echo "<td>" . htmlspecialchars($row['notes']) . "</td>";
+                echo "</tr>";
+
             }
-            ?>
+
+        } else {
+
+            echo "<tr>";
+            echo "<td colspan='7'>No event reservations found.</td>";
+            echo "</tr>";
+
+        }
+
+        ?>
+
         </tbody>
     </table>
 
-    <h2 class="stats-title">Event Statistics</h2>
-    
-    <table class="stats-table">
-        <thead>
-            <tr>
-                <th>Package Name</th>
-                <th>Total Orders</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            $query_stats = "SELECT package_name, COUNT(*) as total FROM event_reservation GROUP BY package_name";
-            $result_stats = mysqli_query($conn, $query_stats);
+    <h2>Event Statistics</h2>
 
-            if (mysqli_num_rows($result_stats) > 0) {
-                while ($stat = mysqli_fetch_assoc($result_stats)) {
-                    ?>
-                    <tr>
-                        <td><?php echo htmlspecialchars($stat['package_name']); ?></td>
-                        <td><?php echo $stat['total']; ?></td>
-                    </tr>
-                    <?php
-                }
-            } else {
-                echo "<tr><td colspan='2' style='text-align:center;'>Tidak ada statistik data.</td></tr>";
-            }
-            ?>
-        </tbody>
-    </table>
-</div>
+<?php
 
-</body>
-</html>
+$sql_stats = "SELECT occasion, COUNT(*) AS total
+              FROM reservation
+              WHERE occasion IS NOT NULL
+              AND occasion != ''
+              GROUP BY occasion
+              ORDER BY total DESC";
+
+$result_stats = mysqli_query($conn, $sql_stats);
+
+$mostPopular = '';
+
+if ($result_stats && mysqli_num_rows($result_stats) > 0) {
+
+    while($row = mysqli_fetch_assoc($result_stats)) {
+
+        if ($mostPopular == '') {
+            $mostPopular = $row['occasion'];
+        }
+
+        echo "<p>Total <strong>" .
+             htmlspecialchars($row['occasion']) .
+             "</strong> Events : " .
+             $row['total'] .
+             "</p>";
+    }
+
+    echo "<p><strong>Most Popular Event : " .
+         htmlspecialchars($mostPopular) .
+         "</strong></p>";
+
+} else {
+
+    echo "<p>No event statistics available yet.</p>";
+
+}
+
+?>
