@@ -1,0 +1,373 @@
+/* ==========================================================================
+   1. GLOBAL STYLES & SCROLL SNAP MANDATORY
+   ========================================================================== */
+@font-face {
+    font-family: "Catilde";
+    src: url("../fonts/catilde/Catilde-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Jane_Austen";
+    src: url("../fonts/jane_austen/JaneAust.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory; /* Tetap menggunakan sistem mandatory */
+    background-color: #19120F;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    background-color: #19120F;
+}
+
+/* Base Page Layout */
+.page {
+    min-height: 100vh; /* Menggunakan min-height agar jika konten meluber, halaman mau memanjang */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    box-sizing: border-box;
+    padding: 60px 20px;
+}
+
+/* Menangani Section Cancel Booking bawaan HTML-mu agar ikut nge-snap */
+#cancel-event-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a0f0a;
+    color: #f5e6c8;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    
+}
+
+/* ==========================================================================
+   2. PAGES CONTENT STYLES (Menjamin Semua Konten Muncul)
+   ========================================================================== */
+
+.bg11 {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important; /* Membuat semua konten pas di tengah layar */
+    align-items: center !important;
+    gap: 20px; /* Memberikan jarak aman antara judul dan galeri foto */
+    background: 
+        url("../image/pagetop.png"),
+        linear-gradient(to bottom, #C8A97E 0%, #8E6F4E 40%, #3B2A20 75%, #19120F 100%);
+    background-position: top center, center;
+    background-repeat: no-repeat, no-repeat;
+    background-size: 200% 180px, cover; 
+    height: 100vh;
+    box-sizing: border-box;
+    padding-top: 60px; /* Memberi ruang agar tidak mentok ke top navbar */
+}
+
+.bg11 .titletext1 {
+    position: relative !important;
+    top: unset !important;
+    left: unset !important;
+    transform: unset !important;
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titletext1 h1 { 
+    font-family: "Jane_Austen"; 
+    margin: 0 0 10px 0; 
+    font-size: 3rem; /* Ukuran font disesuaikan agar proporsional */
+    line-height: 1.2;
+}
+
+.titletext1 p { 
+    font-family: "Catilde"; 
+    margin: 0; 
+    font-size: 1.2rem;
+}
+
+/* Mengatur posisi galeri foto agar berada di bawah judul dengan pas */
+.gallery1 {
+    display: flex; 
+    gap: 20px; 
+    justify-content: center; 
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(14px); 
+    border-radius: 20px; 
+    padding: 20px; 
+    margin: 0 auto;
+    flex-wrap: nowrap; /* Memaksa foto tetap berjajar menyamping */
+}
+
+.gallery1 img { 
+    width: 160px; 
+    height: 220px; 
+    object-fit: cover; 
+    border-radius: 12px; 
+    border: 1px solid rgba(255, 220, 150, 0.25);
+    transition: transform 0.3s; 
+}
+
+/* Bintang dekorasi di bagian bawah */
+.textstars { 
+    position: relative !important;
+    bottom: unset !important;
+    left: unset !important;
+    transform: unset !important;
+    color: antiquewhite; 
+    margin-top: 10px;
+}
+
+.textstars h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Page 12 - Types of Events & Packages */
+#page12 {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+}
+.bg12 { background: #19120F; }
+.page12-title { text-align: center; width: 100%; color: antiquewhite; }
+.page12-title h1 { font-family: "Catilde"; font-size: 2.8rem; margin: 0; }
+.page12-subtitle { font-family: "Jane_Austen"; font-size: 1.6rem; color: rgba(255, 235, 205, 0.6); margin: 0; }
+
+/* Grid Package A & B */
+.package-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 950px;
+    margin: 20px auto;
+}
+
+.package-card {
+    background: rgba(255, 248, 230, 0.08);
+    border: 1px solid rgba(255, 248, 230, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    width: 380px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    backdrop-filter: blur(6px);
+    box-sizing: border-box;
+}
+
+.package-label { font-size: 0.85rem; color: rgba(255, 235, 205, 0.6); text-transform: uppercase; letter-spacing: 1px; }
+.package-card h2 { font-family: "Catilde"; font-size: 1.6rem; color: antiquewhite; margin: 0; }
+.package-desc { font-size: 1rem; color: rgba(255, 235, 205, 0.8); line-height: 1.5; margin: 0; }
+.package-price { border-top: 1px solid rgba(255, 248, 230, 0.15); padding-top: 0.8rem; margin-top: 10px; }
+.price-range { font-family: "Catilde"; font-size: 1.1rem; color: antiquewhite; }
+.price-unit { font-size: 0.85rem; color: rgba(255, 235, 205, 0.5); }
+.page12-footer { font-size: 1.5rem; color: antiquewhite; text-align: center; margin-top: 10px; }
+
+/* Page 14 - History */
+.bg14 {
+    background: linear-gradient(to top, #8E6F4E 20%, #3B2A20 75%, #19120F 100%);
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important; /* Memaksa konten kumpul di tengah */
+    align-items: center !important;
+    height: 100vh; /* Dikunci tepat satu layar */
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+/* Jarak aman judul atas */
+.bg14 .titletext3 {
+    text-align: center;
+    color: antiquewhite;
+    margin-bottom: 10px; /* Dipersempit agar tidak mendorong layout ke bawah */
+}
+
+.bg14 h1 {
+    font-family: "Catilde";
+    margin: 0;
+    font-size: 2.2rem;
+}
+
+.bg14 p {
+    margin: 0;
+    font-family: "Jane_Austen";
+    font-size: 1.5rem;
+}
+
+/* Kontainer Utama Foto + Timeline */
+.history-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px; /* Jarak horizontal antara foto dan timeline */
+    width: 100%;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+/* Frame Foto Keluarga */
+.bg14 .family3 {
+    padding: 10px;
+    background: linear-gradient(145deg, #d6c3a3, #b89b6d, #8c6f47);
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    flex-shrink: 0;
+}
+
+/* Ukuran foto disesuaikan agar proporsional di layar laptop */
+.family3 img {
+    display: block;
+    width: 100%;
+    max-width: 320px; /* Sedikit dikecilkan agar seimbang */
+    height: auto;
+    border-radius: 3px;
+}
+
+/* Area Ruang Timeline Sejarah */
+.history-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Mengurangi jarak antar baris */
+    width: 380px; /* Lebar area teks ditambah sedikit */
+    border-left: 1px solid rgba(255, 220, 150, 0.2);
+    padding-left: 20px;
+}
+
+.timeline-item {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.timeline-divider {
+    color: rgba(255, 220, 150, 0.15);
+    font-size: 0.75rem;
+    margin: 2px 0;
+}
+
+.history-year {
+    display: block;
+    font-family: "Catilde" !important;
+    font-size: 1.05rem !important;
+    color: #C8A96A;
+    position: relative;
+    font-weight: bold;
+}
+
+/* Titik bulat indikator tahun */
+.history-year::before {
+    content: '';
+    position: absolute;
+    left: -24px; /* Dipaskan posisinya dengan border-left baru */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: #C8A96A;
+    border-radius: 50%;
+}
+
+/* Ukuran font tulisan sambung dikecilkan agar pas dalam vh */
+.history-text {
+    font-family: "Jane_Austen" !important;
+    font-size: 1.25rem !important; /* Diturunkan dari ukuran awal agar muat satu layar */
+    line-height: 1.3;
+    color: rgba(255, 235, 205, 0.85);
+    margin: 0;
+}
+
+/* Tiga bintang di paling bawah */
+.textstars3 h1 {
+    font-size: 1.3rem;
+    color: antiquewhite;
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+
+/* Page 15 - Review */
+.bg15 {
+    background: linear-gradient(to bottom, #8E6F4E 10%, #3B2A20 75%, #19120F 100%);
+    flex-direction: column;
+}
+.bg15 .titletext5 { font-family: "Catilde"; color: antiquewhite; font-size: 2rem; margin-bottom: 30px; text-align: center; }
+.textstars4 h1 { color: antiquewhite; text-align: center; margin-top: 20px; }
+
+/* Page 16 - Closing Banner */
+.bg16 {
+    background: linear-gradient(to bottom, #19120F 10%, rgba(20, 11, 10, 0.5) 100% ), url("../image/gajahmadamalam.jpg");
+    background-size: cover;
+    background-position: center bottom;
+}
+.bg16 .titletext6 { text-align: center; color: antiquewhite; }
+.titletext6 h1 { font-family: "Catilde"; margin: 0; font-size: 2.5rem; }
+.titletext6 p { font-family: "Jane_Austen"; font-size: 1.8rem; margin-top: 5px; }
+
+/* ==========================================================================
+   3. COMPONENTS (GALLERY & CARDS)
+   ========================================================================== */
+.gallery1 {
+    display: flex; gap: 20px; justify-content: center; background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(14px); border-radius: 20px; padding: 20px; margin-top: 20px; flex-wrap: wrap;
+}
+.gallery1 img { width: 180px; height: 240px; object-fit: cover; border-radius: 10px; transition: transform 0.3s; }
+.gallery1 img:hover { transform: translateY(-5px); }
+
+.review-container { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+.review-card { width: 240px; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255, 220, 150, 0.2); }
+.review-card img { width: 100%; display: block; }
+
+.package-btn {
+    display: inline-block; padding: 10px 20px; margin-top: 15px; background: transparent;
+    color: #c9a96e; border: 1px solid rgba(201, 169, 110, 0.4); border-radius: 6px;
+    text-decoration: none; font-weight: bold; transition: all 0.3s; text-align: center;
+}
+.package-btn:hover { background: #c9a96e; color: #19120F; }
+
+/* Form Cancel Booking */
+.cancel-event-container {
+    width: 100%; max-width: 500px; background: rgba(255, 255, 255, 0.03); 
+    padding: 35px; border: 1px solid #c9a96e; border-radius: 12px; box-sizing: border-box;
+    text-align: center;
+}
+.cancel-event-container h2 { font-size: 2rem; margin: 0 0 10px 0; font-family: "Catilde"; }
+.cancel-event-subtitle { font-family: "Jane_Austen"; font-size: 1.3rem; color: #c9a96e; margin: 0 0 25px 0; }
+.event-form-group { margin-bottom: 20px; text-align: left; }
+.event-form-group label { display: block; font-size: 0.85rem; color: #c9a96e; margin-bottom: 6px; text-transform: uppercase; }
+.event-form-group input {
+    width: 100%; padding: 12px; background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(201, 169, 110, 0.3); border-radius: 6px; color: #f5e6c8; box-sizing: border-box; font-size: 1rem;
+}
+.btn-cancel-event {
+    width: 100%; padding: 14px; background: transparent; border: 1px solid #c9a96e;
+    color: #c9a96e; font-weight: bold; border-radius: 6px; cursor: pointer; transition: all 0.3s; text-transform: uppercase;
+}
+.btn-cancel-event:hover { background: #c9a96e; color: #1a0f0a; }
+
+/* Footer */
+.footer-section {
+    background-color: #1a0f0a; padding: 40px 0; text-align: center;
+    scroll-snap-align: end;
+}
