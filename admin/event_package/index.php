@@ -26,6 +26,8 @@ include "../../koneksi.php";
                 <th>Phone Number</th>
                 <th>Event Date</th>
                 <th>Status</th>
+                <th>Number of Guests</th>
+                <th>Note</th>
             </tr>
         </thead>
 
