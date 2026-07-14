@@ -195,24 +195,34 @@ tr:hover {
     font-style: italic;
 }
 
-/* Status Badge untuk Kolom Status Tabel */
-.status-badge {
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    display: inline-block;
+/* badge status */ 
+
+.status-badge{
+    display:inline-block;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:.5px;
+    text-transform:uppercase;
 }
-.status-badge.pending {
-    background: rgba(255, 183, 77, 0.15);
-    color: #ffb74d;
-    border: 1px solid #ffb74d;
+
+.status-badge.pending{
+    background:rgba(255,183,77,.15);
+    color:#ffb74d;
+    border:1px solid #ffb74d;
 }
-.status-badge.approved, .status-badge.success {
-    background: rgba(129, 199, 132, 0.15);
-    color: #81c784;
-    border: 1px solid #81c784;
+
+.status-badge.success{
+    background:rgba(129,199,132,.15);
+    color:#81c784;
+    border:1px solid #81c784;
+}
+
+.status-badge.cancelled{
+    background:rgba(255,107,107,.15);
+    color:#ff6b6b;
+    border:1px solid #ff6b6b;
 }
 
 /* ==========================================================================
@@ -276,8 +286,175 @@ tr:hover {
     letter-spacing: 1px;
 }
 
-/* Memastikan tabel manajemen memiliki jarak margin yang rapi */
+/* memastikan tabel ada margin yang rapi */
 .event-table, .stats-table {
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+/* SEARCHHH */
+.search-form{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+/* dorong semua setelah search ke kanan */
+.search-form > select,
+.search-form > button,
+.search-form > a,
+.sort-wrapper{
+    margin-left: 0;
+}
+
+.search-form > select{
+    margin-left: auto;
+}
+
+/* Search Input */
+.search-form input{
+    width: 320px;
+    padding: 12px 18px;
+    border: 1px solid rgba(201,169,110,0.35);
+    border-radius: 30px;
+    background: rgba(255,255,255,0.05);
+    color: antiquewhite;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+
+.search-form input::placeholder{
+    color: rgba(250,235,215,0.55);
+}
+
+.search-form input:focus{
+    border-color: #c9a96e;
+    box-shadow: 0 0 12px rgba(201,169,110,0.35);
+    background: rgba(255,255,255,0.08);
+}
+
+/* Search Button */
+.search-form button{
+    background: linear-gradient(135deg,#c9a96e,#a07840);
+    color:#1a0f07;
+    border:none;
+    padding:12px 22px;
+    border-radius:30px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+
+.search-form button:hover{
+    transform: translateY(-2px);
+    box-shadow:0 6px 18px rgba(201,169,110,0.35);
+}
+
+/* Clear Button */
+.search-form a{
+    background: rgba(255,255,255,0.06);
+    border:1px solid rgba(201,169,110,0.35);
+    color:#c9a96e;
+    padding:12px 22px;
+    border-radius:30px;
+    text-decoration:none;
+    transition:0.3s ease;
+}
+
+.search-form a:hover{
+    background:#c9a96e;
+    color:#1a0f07;
+}
+
+/* ======================================
+   Reservation Status Form
+====================================== */
+.sort-wrapper{
+    margin-left:0;
+}
+
+.status-form{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+/* Dropdown */
+.status-form select{
+    background:rgba(255,255,255,0.05);
+    color:antiquewhite;
+    border:1px solid rgba(201,169,110,.4);
+    border-radius:8px;
+    padding:8px 10px;
+    font-size:13px;
+    cursor:pointer;
+    outline:none;
+    transition:.3s;
+}
+
+.status-form select:focus{
+    border-color:#c9a96e;
+    box-shadow:0 0 10px rgba(201,169,110,.35);
+}
+
+/* Dropdown options */
+.status-form option{
+    background:#19120F;
+    color:antiquewhite;
+}
+
+/* Update button */
+.status-form button{
+    background:linear-gradient(135deg,#c9a96e,#a07840);
+    color:#1a0f07;
+    border:none;
+    border-radius:8px;
+    padding:8px 12px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.status-form button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 5px 15px rgba(201,169,110,.35);
+}
+
+/* Status Filter */
+.search-form > select{
+    width:180px;
+    padding:12px 18px;
+    border-radius:30px;
+    border:1px solid rgba(201,169,110,.35);
+    background:rgba(255,255,255,.05);
+    color:antiquewhite;
+    outline:none;
+}
+
+.search-form select:hover{
+    border-color:#c9a96e;
+}
+
+.search-form select:focus{
+    border-color:#c9a96e;
+    box-shadow:0 0 12px rgba(201,169,110,.35);
+}
+
+.sort-wrapper select{
+    width:180px;
+    padding:12px 18px;
+    border-radius:30px;
+    border:1px solid rgba(201,169,110,.35);
+    background:rgba(255,255,255,.05);
+    color:antiquewhite;
+    outline:none;
+}
+
+/* Dropdown Items */
+.search-form select option{
+    background:#19120F;
+    color:antiquewhite;
 }
