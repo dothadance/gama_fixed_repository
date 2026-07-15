@@ -13,7 +13,6 @@ if (isset($_GET['status']) && $_GET['status'] == 'success' && isset($_GET['code'
     $kode_user = htmlspecialchars($_GET['code']);
     echo "<script>
             alert('🎉 Reservation Successful!\\n\\nYour Table has been booked.\\n⚠️ IMPORTANT: Your Reservation Code is [ $kode_user ]\\n\\nPlease SAVE or SCREENSHOT this code to cancel your reservation later.');
-            // Membersihkan URL agar jika di-refresh, alert tidak muncul terus-menerus
             window.history.replaceState({}, document.title, 'index1.php');
           </script>";
 }
