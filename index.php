@@ -180,15 +180,53 @@ if (isset($_GET['status']) && $_GET['status'] == 'success' && isset($_GET['code'
     <p>Old Recipes, Warm Memories ── Explore Them All.</p>
   </div>
 
-  <div class="cancel-reservation-wrapper" style="margin-top: 50px; text-align: center; color: antiquewhite;">
-    <h3>Want to Cancel Your Reservation?</h3>
-    <p>Enter your Reservation Code below to cancel directly:</p>
-    
-    <form action="cancel_reservation.php" method="POST" style="display: inline-block;" onsubmit="return confirm('Are you sure you want to cancel this reservation?');">
-        <input type="text" name="reservation_code" placeholder="e.g. gama-9X" required
-               style="padding: 10px; border-radius: 8px; border: 1px solid #c9a96e; background: rgba(255,255,255,0.06); color: #f5e6c8; outline: none; width: 160px; text-align: center; text-transform: uppercase;">
-        <button type="submit" class="wa-btn" style="width: auto; padding: 10px 20px; margin-top: 0; margin-left: 10px; display: inline-block;">Cancel Now</button>
-    </form>
+<div class="cancel-reservation-wrapper" style="margin-top: 50px; text-align: center; color: antiquewhite;">
+    <h3>Need to Change or Cancel Your Reservation?</h3>
+
+    <p>
+        Please contact our administrator via WhatsApp.
+        Make sure to mention your <strong>Reservation Code</strong> so we can process your request.
+    </p>
+
+    <button type="button"
+            class="wa-btn"
+            style="width:auto; padding:10px 20px; margin-top:15px;"
+            onclick="openCancelModal()">
+        Contact via WhatsApp
+    </button>
+</div>
+
+<div id="cancelModal" class="gama-modal-overlay" style="display:none;">
+    <div class="gama-modal-box">
+
+        <div class="gama-modal-icon">📞</div>
+
+        <h2>Reservation Assistance</h2>
+
+        <p>
+            To cancel or modify your reservation, please contact our administrator via WhatsApp.
+        </p>
+
+        <div class="gama-code-box">
+            <span class="gama-code-title">IMPORTANT</span>
+            <span class="gama-code-value">Mention Your Reservation Code</span>
+        </div>
+
+        <p class="gama-modal-note">
+            Our team will verify your reservation and assist you with the cancellation or any changes.
+        </p>
+
+        <button class="gama-modal-btn" onclick="goWhatsApp()">
+            Continue to WhatsApp
+        </button>
+
+        <button class="gama-modal-btn"
+                style="margin-top:10px; background:#666;"
+                onclick="closeCancelModal()">
+            Close
+        </button>
+
+    </div>
 </div>
 
 <script>
@@ -227,13 +265,27 @@ if (isset($_GET['status']) && $_GET['status'] == 'success' && isset($_GET['code'
     <script>
         function closeGamaModal() {
             document.getElementById('customAlertModal').style.display = 'none';
-            // Bersihkan URL parameter agar kalau di-refresh pop-up tidak muncul lagi
             window.history.replaceState({}, document.title, 'index.php');
         }
     </script>
 <?php
 }
 ?>
+
+<script>
+function openCancelModal() {
+    document.getElementById("cancelModal").style.display = "flex";
+}
+
+function closeCancelModal() {
+    document.getElementById("cancelModal").style.display = "none";
+}
+
+function goWhatsApp() {
+    window.open("https://wa.me/628115631222", "_blank");
+    closeCancelModal();
+}
+</script>
 
 <script src="js/page1js.js"></script>
 
